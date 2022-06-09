@@ -4,8 +4,8 @@
 
  //header
 
- double get_sales_tax_amount(double num);
- 
+ //double get_sales_tax_amount(double num);
+
 
 //get_sales_tax_amount  8.25%
 

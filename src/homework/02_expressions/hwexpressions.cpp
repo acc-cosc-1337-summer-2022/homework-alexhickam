@@ -14,11 +14,13 @@
 //cout product
 
 
-double get_sales_tax_amount(double num);
-{
-	double value = num + .0675;
-   return value;
-}
+//double get_sales_tax_amount(double num);
+//{
+//	double value = num + .0675;
+ //  return value;
+//}
+
+
 
 //write function code here
 
