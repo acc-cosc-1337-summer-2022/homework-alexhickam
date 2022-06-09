@@ -5,7 +5,7 @@
    // product.
 //example
 
-#include "hwexpressions.h"
+//#include "hwexpressions.h"
 
 //ask for keyed_entry and multiply by meal_amount
 //cout product
