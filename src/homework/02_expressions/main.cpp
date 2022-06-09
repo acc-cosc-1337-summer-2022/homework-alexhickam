@@ -41,12 +41,12 @@ double main()
 {
 
 double meal_amount; 
-double tip_rate; 
-double tip_amout;
-double get_tip_amount;
-double get_sales_tax_amount;
-double tax_amount; //tax rate is 6.75%
-double total;
+//double tip_rate; 
+//double tip_amout;
+//double get_tip_amount;
+//double get_sales_tax_amount;
+//double tax_amount; //tax rate is 6.75%
+//double total;
 
  cout << "Enter Meal Amount "; 
  getline(cin, meal_amount); 
