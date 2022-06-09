@@ -6,6 +6,13 @@ using std::cin;
 
 int main() 
 {
+	auto overtime = is_overtime(40);
+
+	cout<<"Overtime variable is "<<overtime<< "\n";
+
+
+
+	
 	//create a bool variable named even
 	//create an int variable named value
 
