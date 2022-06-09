@@ -1,33 +1,19 @@
-//b) In file hwexpressions.cpp  write function code, multiply tax_rate and meal_amount and return their
- //product.
-
-//d) In file hwexpressions.cpp, write function code to multiply  meal_amount and tip_rate, return their 
-   // product.
-//example
 
 //#include "hwexpressions.h"
 
-//ask for keyed_entry and multiply by meal_amount
-//cout product
+int get_sales_tax_amount(int meal_amount, int sales_tax)
+{
+   auto sales_tax = .675;
+   return meal_amount * sales_tax;
+}
 
-//multiply keyed_entry by meal amount
-//cout product
-
-
-//double get_sales_tax_amount(double num);
-//{
-//	double value = num + .0675;
- //  return value;
-//}
+/*
 
 
 
-//write function code here
-
-//meal_amount = product1
-//tax_rate * meal_amount = product2
-//tip_rate * meal_amount = product3
-
-
-
-
+double get_tip_amount(double meal_amount, double tip_rate)
+{
+   auto tip_rate
+   return meal_amount * tip_rate;
+}
+*/
