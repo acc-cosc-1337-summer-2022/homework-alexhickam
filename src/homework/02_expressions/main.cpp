@@ -19,7 +19,7 @@ auto result = get_sales_tax_amount(num);
 
     return 0;
 }
-*/
+
 
 #include <iostream>
 #include <string>
@@ -46,3 +46,5 @@ int main ()
   cout << "Total : $" << (price*sales_tax)+price+tip << endl;
   return 0;
 }
+
+*/
