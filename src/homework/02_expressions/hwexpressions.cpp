@@ -1,5 +1,6 @@
 #include <iostream>
 #include "hwexpressions.h"
+using namespace std;
 
 double get_sales_tax_amount(double meal_amount)
 {

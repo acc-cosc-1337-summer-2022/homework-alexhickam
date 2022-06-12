@@ -2,10 +2,10 @@
 #include "catch.hpp"
 #include "hwexpressions.h"
 
-TEST_CASE("Verify Test Configuration", "verification") {
+TEST_CASE("Verify Test Configuration", "Verification") {
 	REQUIRE(true == true);
 }
-TEST_CASE("Verify get_sales_tax_amount function") 
+TEST_CASE("Verify Get Sales Tax Amount function") 
 {
 	REQUIRE(get_sales_tax_amount (10) == .675);
   REQUIRE(get_sales_tax_amount (20) == 1.35);
