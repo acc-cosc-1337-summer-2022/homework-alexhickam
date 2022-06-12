@@ -1,8 +1,5 @@
-
+#include <iostream>
 #include "hwexpressions.h"
-
-double meal_amount=0;
-double tip_rate=0;
 
 double get_sales_tax_amount(double meal_amount)
 {
