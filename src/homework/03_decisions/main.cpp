@@ -1,21 +1,41 @@
+
 //write include statements
+#include "decisions.h"
 
+using std::cin;
+using std::cout;
+using std::string;
 
-/*
- Modify the code in main function to replace the repeating code that uses cin to capture
-    letter_grade and credit_hours from the keyboard with a do-while loop.  In the loop, keep the
-    sum of credit points and credit hours. The loop continues until the user opts out. Do the gpa
-    calculation after the loop.
-
-In file src/homework/03_decisions/main.cpp:
-     Create a loop that continues until the user opts to exit.
-         Capture data from the keyboard for letter grade and credit points
-		  After user opts out.
-    Calculate the GPA and display the total credit points and total credit hours.
-
-	5) Save your changes.
-*/
 int main() 
 {
+	int hours;
+	string grade;
+
+	int total_credit_points = 0;
+	int total_credit_hours = 0;
+
+	do {
+		cout<<"Submit letter grade and press enter.  Key in \"x\" and press enter when complete."<<"\n";
+		cin>>grade;
+
+		if(grade == "x"){
+			break;
+		};
+
+		cout<<"Submit credit hours "<<"\n";
+		cin>>hours;
+
+		int credit_points = get_grade_points(grade);
+
+		total_credit_points += credit_points * hours;
+		total_credit_hours += hours;
+
+	} while (grade != "x");
+
+	cout<<"Total Credit Points: "<<total_credit_points<<"\n";
+	cout<<"Total Credit Hours: "<<total_credit_hours<<"\n";
+
+	cout<<"Cumulative GPA:  "<<calculate_gpa(total_credit_hours, total_credit_points)<<"\n";
+	
 	return 0;
 }
