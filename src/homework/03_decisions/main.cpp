@@ -24,6 +24,7 @@ int main()
 
 		cout<<"Submit credit hours "<<"\n";
 		cin>>hours;
+		
 
 		int credit_points = get_grade_points(grade);
 

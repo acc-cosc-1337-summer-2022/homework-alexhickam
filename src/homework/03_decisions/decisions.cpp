@@ -30,12 +30,10 @@ int get_grade_points(string letter_grade){
 
 double calculate_gpa(int credit_hours, double credit_points)
 {
-    double gpa = -1;
-
-   if(credit_hours != 0)
-   {
-        gpa = credit_points/ credit_hours;
-   }
-
-    return gpa;
+    if(credit_hours >= 1){
+        return credit_points / credit_hours;
+    }
+    else{
+        return -1;
+    }
 }
