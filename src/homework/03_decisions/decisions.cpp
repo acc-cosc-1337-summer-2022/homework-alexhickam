@@ -1,10 +1,7 @@
-//write include statement for decisions header
-
 #include "decisions.h"
 
 using std::string;
 
-//Write code for function(s) code here
 int get_grade_points(string letter_grade){
 
     int grade_point;

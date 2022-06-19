@@ -33,7 +33,6 @@ int main()
 
 	cout<<"Total Credit Points: "<<total_credit_points<<"\n";
 	cout<<"Total Credit Hours: "<<total_credit_hours<<"\n";
-
 	cout<<"Cumulative GPA:  "<<calculate_gpa(total_credit_hours, total_credit_points)<<"\n";
 	
 	return 0;
