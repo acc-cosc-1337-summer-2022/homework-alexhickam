@@ -1,64 +1,122 @@
 #include "tic_tac_toe.h"
+#include "tic_tac_toe_3.h"
+#include "tic_tac_toe_4.h"
 #include<iostream>
 #include<string>
+#include<vector>
+#include<memory>
 
-using std::cout;
-using std::cin;
-using std::string;
 
-int main() 
+using std::cout; using std:: cin; using std::string; using std::vector; using std::unique_ptr; using std::make_unique; using namespace std;
+
+int main( ) 
 {
-	TicTacToe game;
 	string first_player;
-	char user_choice = 'y';
+	int peg_count;
+	char user_choice = '\0';
+	bool is_position_taken = false;
+	vector<int> positions_taken;
+	unique_ptr<TicTacToe> game;
 
-	do
-	{
-		cout<<"Enter first player X or O: ";
-		cin>>first_player;
-		while(first_player != "X" && first_player != "O")
-		{
-			cout<<"\nInvalid Entry! Enter first player X or O: ";
-			cin>>first_player;
-		}
-
-		game.start_game(first_player);
-
-		int position;
-
-		while(!game.game_over())
-		{
-			cout<<"Enter a position: ";
-			cin>>position;
-			while(position < 1 || position > 9)
+	do {
+		
+		peg_count = 0;
+		while (peg_count != 1 && peg_count != 2)
 			{
-				cout<<"Invalid Position! Choose a position between 0-9: ";
-				cin>>position; 
-			}
-			
-			game.mark_board(position);
-			game.display_board();
-			
-		}
-		if( game.get_winner() == "X" || game.get_winner() == "O")
-			{
-			cout<<game.get_winner() <<" WINS!!! "<<"\n" ;
-			}
-		else
-		{
-			cout<<"Draw! No Winner!\n";
-		}
-		
-		
-		cout<<"Play again? Enter Y or N: ";
-		cin>>user_choice;
-		while(user_choice != 'Y' && user_choice != 'y' && user_choice != 'N' && user_choice != 'n')
-        {
-            cout<<"Invalid choice! Type 'Y' to play again or 'N' to end program: ";
-            cin>>user_choice;
-        }
-		
-	} while (user_choice == 'y' || user_choice == 'Y');
+			cout<<"\n TIC TAC TOE \n\n Please Select Game Type \n\n Key and enter '1' to play 3x3 \n Key and enter '2' to play 4x4 \n: ";
+			cin>>peg_count;
+			if (peg_count != 1 && peg_count != 2)
+				{
+				cout<<"Invalid input. Options are either '1' or '2'.\n";
+				} else 
+					{
+				if (peg_count == 1)
+						{
+					game = make_unique<TicTacToe3>();
+//
 	
+//
+
+						} else 	
+							{
+					game = make_unique<TicTacToe4>();
+							}
+					}
+			}
+		
+		first_player = "";
+		if (positions_taken.size() != 0)
+			{
+			positions_taken.clear();
+			}
+		user_choice = '\0';
+
+		while (first_player != "X" && first_player != "O")
+			{
+			cout<<"\n Player 1, choose X or O. \n Choice: ";
+			cin>>first_player;
+			if (first_player != "X" && first_player != "O")
+				{
+				cout<<"Invalid input. First player must be either 'X' or 'O'.\n";
+				}
+			}
+
+		game->start_game(first_player);
+
+
+		while(!game->game_over())
+		{
+			
+			int position = 0;
+			while (((peg_count == 1) && (position < 1 || position > 9 || is_position_taken)) || ((peg_count == 2) && (position < 1 || position > 16 || is_position_taken)))
+			{
+				is_position_taken = false;
+				cout<<"Select a position to take: ";
+				cin>>position;
+				if ((position < 1 || position > 9) && (peg_count == 1))
+					{
+						cout<<"Position already taken, select a different position between 1-9 (inclusive).\n";
+					} 
+						else if ((position < 1 || position > 16) && (peg_count == 2))
+						{
+							cout<<"Position already taken, select a different position between 1-16 (inclusive).\n";
+						} 
+						else if (positions_taken.size() != 0)
+							{
+							for (int position_taken : positions_taken)
+								{
+									if (position == position_taken)
+										{
+											is_position_taken = true;
+											cout<<"Position already taken, select a different position.\n";
+										}
+								}
+							}
+			}
+			positions_taken.push_back(position);
+			game->mark_board(position);
+			game->display_board();
+		}
+
+		cout<<"GAME OVER! Winner is "<<game->get_winner();
+
+		cout<<"\nPlay again? <y/n> ";
+		cin>>user_choice;
+		user_choice = toupper(user_choice);
+
+		while (user_choice != 'Y' && user_choice != 'N')
+		{
+			cout<<"Play again? <y/n> ";
+			cin>>user_choice;
+			user_choice = toupper(user_choice);
+			if (user_choice != 'Y' && user_choice != 'N')
+			{
+				cout<<"Invalid input. Please enter 'n' to quit or 'y' to restart game.\n";
+			}
+		}
+		
+	}
+		while(toupper(user_choice) == 'Y');
+
 	return 0;
 }
