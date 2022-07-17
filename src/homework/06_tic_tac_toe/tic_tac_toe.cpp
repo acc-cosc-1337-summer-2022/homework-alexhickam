@@ -20,7 +20,6 @@ bool TicTacToe::game_over()
             set_winner("C");
             return true;
         }
-
     return false;
 }
 
@@ -44,7 +43,6 @@ void TicTacToe::clear_board()
         peg = " ";
     }
 }
-
 void TicTacToe::set_next_player()
 {
     if (player == "X")
@@ -65,10 +63,8 @@ bool TicTacToe::check_board_full()
             return false;
         }    
     }
-
     return true;
 }
-
 void TicTacToe::set_winner(string w)
 {
     winner = w;

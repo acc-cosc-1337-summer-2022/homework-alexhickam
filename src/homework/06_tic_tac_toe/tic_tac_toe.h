@@ -32,5 +32,4 @@ class TicTacToe{
         bool check_board_full();
         void set_winner(string w);
 };
-
 #endif

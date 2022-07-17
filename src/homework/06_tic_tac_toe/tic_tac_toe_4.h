@@ -6,7 +6,6 @@
 
 class TicTacToe4 : public TicTacToe
 {
-
     public:
         TicTacToe4() : TicTacToe(4){}
         void display_board() const;
@@ -14,7 +13,6 @@ class TicTacToe4 : public TicTacToe
         bool check_column_win();
         bool check_diagonal_win();
         bool check_row_win();
-
 };
 
 #endif

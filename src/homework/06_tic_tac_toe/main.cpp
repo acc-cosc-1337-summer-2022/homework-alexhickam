@@ -32,15 +32,14 @@ int main( )
 					{
 				if (peg_count == 1)
 						{
-					game = make_unique<TicTacToe3>();
-//
-	
-//
-
-						} else 	
-							{
-					game = make_unique<TicTacToe4>();
-							}
+						cout<<"USE THESE GRID OPTIONS AS BOARD POSITIONS\n|1|2|3|\n|4|5|6|\n|7|8|9|\n";
+						game = make_unique<TicTacToe3>();
+						} 
+						else 	
+						{
+						cout<<"USE THESE GRID OPTIONS AS BOARD POSITIONS\n|1 |2 |3 |4 |\n|5 |6 |7 |8 |\n|9 |10|11|12|\n|13|14|15|16|";
+						game = make_unique<TicTacToe4>();
+						}
 					}
 			}
 		
