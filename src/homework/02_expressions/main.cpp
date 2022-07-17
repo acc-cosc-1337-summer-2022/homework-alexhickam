@@ -1,15 +1,31 @@
-﻿//write include statements
+﻿
+#include "hwexpressions.h"
+#include <iostream>
 
+using namespace std;
 
-//write namespace using statement for cout
-
-
-/*
-Call multiply_numbers with 10 and 10 parameter values and display function result
-*/
 int main()
 {
-	
+  double meal_amount=0;
+  double tip_rate=0/100;
+  double total=0;
 
-	return 0;
+  cout<<"Enter Subtotal: $";
+  cin>>meal_amount;
+
+  cout<<"Enter A Percentage for Tip: %";
+  cin>>tip_rate;
+
+  double tax_amount=get_sales_tax_amount(meal_amount);
+
+  double tip_amount=get_tip_amount(tip_rate/100,meal_amount);
+  
+  total=meal_amount+tax_amount+tip_amount;
+  
+  cout<<"Subtotal: $"<<meal_amount<<endl;
+  cout<<"Tax: $"<<tax_amount<<endl;
+  cout<<"Tip: $"<<tip_amount<<endl;
+  cout<<"Total: $"<<total<<endl;
+
+  return 0;
 }
